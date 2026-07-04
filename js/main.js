@@ -161,3 +161,61 @@ window.doRegister = async function () {
 };
 
 loadCaptcha();
+
+/* ==================== BANDEAU COOKIES ==================== */
+(function initCookieBanner() {
+  if (localStorage.getItem('cookie_consent')) return;
+  const banner = document.getElementById('cookieBanner');
+  setTimeout(() => banner.classList.add('show'), 600);
+})();
+window.setCookieConsent = function (accepted) {
+  localStorage.setItem('cookie_consent', accepted ? 'accepted' : 'refused');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+/* ==================== MODAL "PARLER AU SERVICE COMMERCIAL" ==================== */
+window.openSalesModal = function () {
+  document.getElementById('salesModalOverlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+};
+window.closeSalesModal = function () {
+  document.getElementById('salesModalOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+};
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeSalesModal();
+});
+
+function showSalesAlert(html, cls) {
+  document.getElementById('salesAlert').innerHTML = `<div class="alert ${cls}">${html}</div>`;
+}
+
+window.submitSalesForm = async function () {
+  const btn = document.getElementById('salesSubmitBtn');
+  const body = {
+    prenom: document.getElementById('salesPrenom').value.trim(),
+    nom: document.getElementById('salesNom').value.trim(),
+    titre: document.getElementById('salesTitre').value.trim(),
+    entreprise: document.getElementById('salesEntreprise').value.trim(),
+    email: document.getElementById('salesEmail').value.trim(),
+    message: document.getElementById('salesMessage').value.trim(),
+    aideVente: document.getElementById('salesAideVente').checked,
+    aideTechnique: document.getElementById('salesAideTechnique').checked,
+    newsletter: document.getElementById('salesNewsletter').checked,
+    societe_web: document.getElementById('salesHoneypot').value
+  };
+  if (!body.prenom || !body.nom || !body.entreprise || !body.email) {
+    return showSalesAlert('Prénom, nom, entreprise et courriel sont obligatoires.', 'err');
+  }
+  btn.disabled = true; btn.textContent = 'Envoi en cours...';
+  try {
+    const data = await api('/api/contact/sales', { method: 'POST', body: JSON.stringify(body) });
+    showSalesAlert(escapeHtml(data.message || 'Demande envoyée avec succès.'), 'ok');
+    document.getElementById('salesForm').reset();
+    setTimeout(closeSalesModal, 2200);
+  } catch (e) {
+    showSalesAlert(escapeHtml(e.message), 'err');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Soumettre une demande';
+  }
+};

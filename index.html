@@ -21,6 +21,7 @@
       <a href="#acces">Tarifs &amp; accès</a>
     </nav>
     <div class="nav-cta">
+      <button class="btn ghost sales" onclick="openSalesModal()">&#128222; Parlez au service commercial</button>
       <button class="btn ghost" onclick="scrollToAuth('login')">Se connecter</button>
       <button class="btn primary" onclick="scrollToAuth('register')">Essayer gratuitement</button>
       <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
@@ -389,6 +390,7 @@
         <p>Rejoignez les entreprises qui ont choisi la biométrie plutôt que le papier.</p>
         <div class="hero-cta">
           <button class="btn primary lg" onclick="scrollToAuth('register')">Créer mon compte gratuitement</button>
+          <button class="btn ghost lg" onclick="openSalesModal()">&#128222; Parlez au service commercial</button>
         </div>
       </div>
     </div>
@@ -435,6 +437,62 @@
     </div>
   </div>
 </footer>
+
+<!-- BANDEAU COOKIES -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>
+    Ce site utilise des cookies pour améliorer votre expérience et mesurer son audience.
+    Consultez notre <a href="confidentialite.html">politique de confidentialité</a> pour en savoir plus.
+  </p>
+  <div class="cookie-actions">
+    <button class="btn ghost" onclick="setCookieConsent(false)">Refuser</button>
+    <button class="btn primary" onclick="setCookieConsent(true)">Accepter</button>
+  </div>
+</div>
+
+<!-- MODAL : PARLER AU SERVICE COMMERCIAL -->
+<div class="modal-overlay" id="salesModalOverlay" onclick="if(event.target===this) closeSalesModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeSalesModal()" aria-label="Fermer">&times;</button>
+    <h3>Parlez au service commercial</h3>
+    <p class="sub">Decrivez votre besoin, notre équipe vous recontacte sous 24h ouvrées.</p>
+
+    <div id="salesAlert"></div>
+
+    <form id="salesForm" onsubmit="return false;">
+      <input type="text" id="salesHoneypot" class="hp-field" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <div class="form-group"><label>Prénom</label><input id="salesPrenom" placeholder="Jeanne"></div>
+        <div class="form-group"><label>Nom de famille</label><input id="salesNom" placeholder="Biche"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Titre d'emploi</label><input id="salesTitre" placeholder="Responsable produit"></div>
+        <div class="form-group"><label>Entreprise</label><input id="salesEntreprise" placeholder="Acme Inc."></div>
+      </div>
+      <div class="form-group">
+        <label>Courriel de l'entreprise</label>
+        <input id="salesEmail" type="email" placeholder="jeanne@entreprise.com">
+      </div>
+      <div class="form-group">
+        <label>Comment notre équipe commerciale peut-elle vous aider ?</label>
+        <textarea id="salesMessage" placeholder="Décrivez brièvement votre projet, votre solution actuelle, votre calendrier, son envergure, votre budget, vos besoins en…"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Qui devrait se joindre à nous de notre côté ?</label>
+        <div class="checkbox-row">
+          <label class="checkbox-item"><input type="checkbox" id="salesAideVente" checked> Experts en vente</label>
+          <label class="checkbox-item"><input type="checkbox" id="salesAideTechnique"> Experts techniques</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="checkbox-item" style="text-transform:none;font-size:14px;color:var(--text);font-weight:400;">
+          <input type="checkbox" id="salesNewsletter" checked> Inscrivez-moi à la newsletter de PresenceRH
+        </label>
+      </div>
+      <button class="btn primary block lg" id="salesSubmitBtn" onclick="submitSalesForm()">Soumettre une demande</button>
+    </form>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
