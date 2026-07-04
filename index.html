@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PresenceRH — La présence, réinventée par la biométrie et la géolocalisation</title>
+<meta name="description" content="PresenceRH digitalise le pointage de votre entreprise : empreinte digitale, reconnaissance faciale, empreinte vocale, géolocalisation intelligente et gestion RH complète. Essayez-le gratuitement.">
+<link rel="icon" href="assets/logo-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img src="assets/logo-192.png" alt="PresenceRH"> PresenceRH</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#demo">Démo</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#faq">FAQ</a>
+      <a href="#acces">Tarifs &amp; accès</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="btn ghost" onclick="scrollToAuth('login')">Se connecter</button>
+      <button class="btn primary" onclick="scrollToAuth('register')">Essayer gratuitement</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal in">
+        <span class="eyebrow">&#9889; Nouvelle génération de gestion RH</span>
+        <h1>Le pointage de vos équipes,<br><span class="grad">enfin infalsifiable.</span></h1>
+        <p class="lead">
+          PresenceRH remplace la feuille de présence et le badgeur par une application qui vérifie
+          <b>qui</b> pointe (biométrie), <b>où</b> il se trouve (géolocalisation) et <b>quand</b> il doit être là
+          (horaires intelligents) — automatiquement, sans papier, sans triche possible.
+        </p>
+        <div class="hero-cta">
+          <button class="btn primary lg" onclick="scrollToAuth('register')">Démarrer gratuitement &#8594;</button>
+          <button class="btn ghost lg" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">&#9654; Voir la démo (2 min)</button>
+        </div>
+        <div class="hero-trust">
+          <span><span class="dot"></span> Sans engagement</span>
+          <span><span class="dot"></span> Compte activé sous 24h</span>
+          <span><span class="dot"></span> Web, Android, iOS, Windows, macOS</span>
+        </div>
+      </div>
+
+      <div class="reveal in">
+        <div class="float-card float-1">&#9989; Présence validée</div>
+        <div class="float-card float-2">&#128205; Zone confirmée (12m)</div>
+        <div class="phone-mock">
+          <div class="phone-screen">
+            <div class="ps-time" id="heroClock">08:24:10</div>
+            <div class="ps-date">Vendredi 4 juillet 2026</div>
+            <div class="ps-card">
+              <div class="ps-steps">
+                <div class="ps-step done"><div class="ic">&#8594;</div><div class="lbl">Arrivée</div></div>
+                <div class="ps-step now"><div class="ic">&#9611;</div><div class="lbl">Pause</div></div>
+                <div class="ps-step"><div class="ic">&#8635;</div><div class="lbl">Retour</div></div>
+                <div class="ps-step"><div class="ic">&#9679;</div><div class="lbl">Départ</div></div>
+              </div>
+              <div class="muted" style="font-size:11px;text-align:center;margin-bottom:10px;">Horaires : 08:00 · pause 12:00-14:00</div>
+              <div class="ps-btn">Partir en pause</div>
+            </div>
+            <div class="ps-card">
+              <span class="ps-badge">&#128272; Empreinte vérifiée</span>
+              <div style="font-size:12px;margin-top:10px;color:var(--muted);">Reconnaissance faciale disponible sur cet appareil</div>
+            </div>
+            <div class="ps-card" style="margin-bottom:0;">
+              <div style="font-size:11.5px;font-weight:700;margin-bottom:6px;">Position confirmée</div>
+              <div style="font-size:11px;color:var(--muted);">Siège JMJ · à 12 m · rayon autorisé 20 m</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS / PREUVE -->
+  <div class="logos-strip">
+    <div class="container">
+      <p>Conçu pour les PME, cabinets, agences et entreprises multi-sites</p>
+      <div class="logos-row">
+        <span>&#127970; Sièges &amp; agences</span>
+        <span>&#128663; Équipes terrain</span>
+        <span>&#128188; Commerciaux &amp; prospection</span>
+        <span>&#127991;&#65039; Multi-sites</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FONCTIONNALITES -->
+  <section class="section" id="fonctionnalites">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Fonctionnalités inédites</span>
+        <h2>Tout ce qu'un logiciel de présence classique ne fait pas</h2>
+        <p>Chaque fonctionnalité ci-dessous a été pensée pour un problème réel : la fraude au pointage,
+        les certificats médicaux douteux, les équipes dispersées, la sécurité des données.</p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(42,217,184,0.12);color:var(--teal);">&#128272;</div>
+          <h3>Triple sécurité biométrique</h3>
+          <p>Empreinte digitale, reconnaissance faciale ou empreinte vocale : l'appareil de l'employé choisit
+          automatiquement la meilleure méthode disponible. Impossible de pointer pour quelqu'un d'autre.</p>
+          <span class="tag">Exclusif</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(139,124,246,0.12);color:var(--violet);">&#128205;</div>
+          <h3>Géolocalisation intelligente</h3>
+          <p>Rayon de tolérance configurable, plusieurs positions autorisées par employé et par jour
+          (agences, clients, chantiers) — le pointage n'est validé que dans la bonne zone.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(255,122,41,0.12);color:var(--amber);">&#128203;</div>
+          <h3>Certificats médicaux vérifiés</h3>
+          <p>L'employé scanne son billet de repos avec l'appareil photo. Le médecin reçoit un SMS automatique
+          et confirme lui-même l'authenticité en répondant simplement OUI ou NON.</p>
+          <span class="tag">Exclusif</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(74,222,128,0.12);color:var(--green);">&#128172;</div>
+          <h3>Messages de bienveillance automatiques</h3>
+          <p>Prompt rétablissement pour un arrêt maladie, bon congé pour des vacances, bonne route pour
+          une sortie professionnelle : chaque demande d'absence déclenche le bon message, au bon moment.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(42,217,184,0.12);color:var(--teal);">&#128663;</div>
+          <h3>Missions &amp; prospection terrain</h3>
+          <p>Vos commerciaux pointent leur arrivée et leur départ chez chaque client visité dans la journée :
+          la durée de chaque visite est calculée automatiquement, sans feuille de route papier.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(255,92,92,0.12);color:var(--danger);">&#9888;&#65039;</div>
+          <h3>Détection des départs non autorisés</h3>
+          <p>Un employé qui pointe son arrivée puis disparaît sans pointer son départ, sans autorisation de
+          sortie professionnelle validée, est automatiquement signalé à la RH.</p>
+          <span class="tag">Exclusif</span>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(139,124,246,0.12);color:var(--violet);">&#9200;</div>
+          <h3>Rappels intelligents de prise de service</h3>
+          <p>30 minutes avant, 10 minutes avant, puis à l'heure prévue : l'application alerte l'employé
+          uniquement s'il n'est pas encore arrivé dans sa zone de travail.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(42,217,184,0.12);color:var(--teal);">&#128202;</div>
+          <h3>Tableau de bord RH complet</h3>
+          <p>Présences jour, semaine, mois, année ; durée réelle passée sur site ; export PDF en un clic
+          pour chaque rapport, réservé aux administrateurs.</p>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="fi" style="background:rgba(255,122,41,0.12);color:var(--amber);">&#128274;</div>
+          <h3>Anti-piratage par activation unique</h3>
+          <p>Chaque nouvelle installation de l'application doit être activée par un code à usage unique
+          généré par votre super-administrateur. Une copie non autorisée reste inutilisable.</p>
+          <span class="tag">Exclusif</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT CA MARCHE -->
+  <section class="section" style="background:var(--panel);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Mise en route</span>
+        <h2>Opérationnel en moins d'une journée</h2>
+        <p>Aucune installation matérielle, aucun badgeur à câbler. Tout se passe sur les téléphones
+        que vos équipes utilisent déjà.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3>Créez votre espace</h3>
+          <p>Inscrivez votre entreprise et définissez la position GPS de votre siège en quelques secondes.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h3>Invitez vos équipes</h3>
+          <p>Chaque employé s'inscrit, la RH valide le compte par un simple lien reçu par e-mail.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h3>Enregistrement biométrique</h3>
+          <p>Empreinte, visage ou voix : chaque employé enrôle sa sécurité une seule fois, en 30 secondes.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">04</div>
+          <h3>Pilotez depuis le tableau de bord</h3>
+          <p>Présences, absences, missions : toutes les données remontent en temps réel côté RH.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO VIDEO -->
+  <section class="section" id="demo">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Voir avant de croire</span>
+        <h2>PresenceRH en 2 minutes chrono</h2>
+        <p>Le pointage biométrique et géolocalisé, du point de vue de l'employé.</p>
+      </div>
+      <div class="video-wrap reveal">
+        <div class="video-frame">
+          <video id="demoVideo" controls poster="assets/logo-512.png" style="display:none;">
+            <source src="assets/demo-presencerh.mp4" type="video/mp4">
+          </video>
+          <div class="video-placeholder" id="videoPlaceholder">
+            <div class="play-btn">&#9654;</div>
+            <p style="font-weight:700;color:var(--text);">Vidéo de démonstration à venir</p>
+            <p style="max-width:420px;font-size:13px;">
+              Déposez votre fichier <code>demo-presencerh.mp4</code> dans le dossier <code>assets/</code> pour
+              qu'il remplace automatiquement ce message.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITE -->
+  <section class="section" id="securite" style="background:var(--panel);">
+    <div class="container security-grid">
+      <div class="reveal">
+        <span class="eyebrow">Sécurité &amp; conformité</span>
+        <h2 style="font-size:clamp(24px,3.6vw,34px);margin-bottom:18px;">
+          Vos données de présence méritent plus qu'un tableau Excel partagé.
+        </h2>
+        <p class="muted" style="font-size:15px;line-height:1.7;">
+          PresenceRH a été construit avec une exigence de sécurité de bout en bout : mots de passe chiffrés,
+          jetons de session signés, vérification anti-robot à la connexion, et une isolation totale des
+          données entre chaque entreprise cliente.
+        </p>
+      </div>
+      <ul class="security-list reveal">
+        <li>
+          <div class="si">&#128272;</div>
+          <div><h4>Mots de passe chiffrés (bcrypt)</h4><p>Jamais stockés en clair, jamais lisibles, même par notre équipe.</p></div>
+        </li>
+        <li>
+          <div class="si">&#129302;</div>
+          <div><h4>Vérification anti-robot</h4><p>Chaque connexion est protégée par un test anti-automatisation.</p></div>
+        </li>
+        <li>
+          <div class="si">&#127970;</div>
+          <div><h4>Isolation totale par entreprise</h4><p>Chaque client dispose de sa propre base de données dédiée : aucune donnée ne peut circuler d'une entreprise à une autre.</p></div>
+        </li>
+        <li>
+          <div class="si">&#128737;&#65039;</div>
+          <div><h4>Accès administrateur cloisonné</h4><p>Seul un rôle super-administrateur distinct gère la licence ; les données RH restent réservées aux comptes autorisés.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INSCRIPTION / CONNEXION -->
+  <section class="section auth-section" id="acces">
+    <div class="container auth-grid">
+      <div class="reveal">
+        <span class="eyebrow">Accès direct</span>
+        <h3>Créez votre compte, il est déjà relié à l'application.</h3>
+        <p>
+          Le formulaire ci-contre communique directement avec l'application PresenceRH : votre inscription
+          ou votre connexion sont immédiatement valables sur le web, Android, iOS, Windows et macOS — pas de
+          double saisie, pas de compte séparé.
+        </p>
+        <ul>
+          <li><b>&#10003;</b> Inscription en moins de 2 minutes</li>
+          <li><b>&#10003;</b> Validation du compte par la RH sous 24h</li>
+          <li><b>&#10003;</b> Enregistrement biométrique à la première connexion</li>
+          <li><b>&#10003;</b> Aucune carte bancaire requise pour démarrer</li>
+        </ul>
+      </div>
+
+      <div class="auth-card reveal" id="authCard">
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Connexion</div>
+          <div class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')">Inscription</div>
+        </div>
+
+        <div id="authAlert"></div>
+
+        <form id="loginForm" onsubmit="return false;">
+          <div class="form-group"><label>E-mail</label><input id="loginEmail" type="email" autocomplete="username"></div>
+          <div class="form-group"><label>Mot de passe</label>
+            <div class="pass-wrap">
+              <input id="loginPass" type="password" autocomplete="current-password">
+              <button type="button" class="pass-toggle" onclick="togglePass('loginPass',this)">&#128065;</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Vérification anti-robot</label>
+            <div class="form-row">
+              <input id="loginCaptchaAnswer" inputmode="numeric" placeholder="Résultat">
+              <button type="button" class="btn ghost" style="flex:0 0 auto;" onclick="loadCaptcha()">&#8635;</button>
+            </div>
+            <div class="muted" style="font-size:11.5px;margin-top:6px;" id="loginCaptchaQuestion">Chargement...</div>
+          </div>
+          <button class="btn primary block lg" id="loginBtn" onclick="doLogin()">Se connecter</button>
+        </form>
+
+        <form id="registerForm" style="display:none;" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group"><label>Matricule</label><input id="regMatricule" placeholder="Ex: 0007"></div>
+            <div class="form-group"><label>Service</label><input id="regService"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Nom</label><input id="regNom"></div>
+            <div class="form-group"><label>Prénom</label><input id="regPrenom"></div>
+          </div>
+          <div class="form-group"><label>E-mail</label><input id="regEmail" type="email" autocomplete="username"></div>
+          <div class="form-group"><label>Mot de passe</label>
+            <div class="pass-wrap">
+              <input id="regPass" type="password" autocomplete="new-password">
+              <button type="button" class="pass-toggle" onclick="togglePass('regPass',this)">&#128065;</button>
+            </div>
+          </div>
+          <div class="form-group"><label>Type de compte</label>
+            <select id="regRole"><option value="EMPLOYE">Employé</option><option value="ADMIN">Administrateur RH</option></select>
+          </div>
+          <button class="btn primary block lg" id="registerBtn" onclick="doRegister()">Créer mon compte</button>
+          <p class="muted" style="font-size:11.5px;margin-top:14px;line-height:1.6;">
+            Après validation par les ressources humaines, vous enregistrerez votre empreinte digitale,
+            votre reconnaissance faciale ou votre empreinte vocale pour commencer à pointer.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2>Tout ce que vous vous demandez avant de vous lancer</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Faut-il acheter du matériel spécifique (badgeuse, capteur) ?<span class="chev">&#9660;</span></div>
+          <div class="faq-a"><p>Non. PresenceRH fonctionne avec les smartphones que vos employés utilisent déjà (empreinte, visage ou micro déjà intégrés) et avec un simple ordinateur pour la RH.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Que se passe-t-il si un employé n'a ni capteur d'empreinte ni caméra faciale ?<span class="chev">&#9660;</span></div>
+          <div class="faq-a"><p>L'empreinte vocale prend automatiquement le relais : l'employé prononce une phrase de sécurité pour valider sa présence.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Mes données sont-elles partagées avec d'autres entreprises clientes ?<span class="chev">&#9660;</span></div>
+          <div class="faq-a"><p>Jamais. Chaque entreprise cliente dispose de sa propre base de données isolée, hébergée séparément.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">Puis-je essayer avant de m'engager ?<span class="chev">&#9660;</span></div>
+          <div class="faq-a"><p>Oui, l'inscription ci-dessus crée immédiatement votre espace d'essai, sans carte bancaire.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">L'application fonctionne-t-elle hors ligne ?<span class="chev">&#9660;</span></div>
+          <div class="faq-a"><p>Le pointage nécessite une connexion internet (vérification serveur de la position et de l'identité), disponible en 3G/4G/Wi-Fi.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="section">
+    <div class="container">
+      <div class="final-cta reveal">
+        <h2>Arrêtez de gérer la présence à la confiance.</h2>
+        <p>Rejoignez les entreprises qui ont choisi la biométrie plutôt que le papier.</p>
+        <div class="hero-cta">
+          <button class="btn primary lg" onclick="scrollToAuth('register')">Créer mon compte gratuitement</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="brand"><img src="assets/logo-192.png" alt="PresenceRH"> PresenceRH</a>
+        <p class="muted" style="font-size:13px;margin-top:14px;max-width:260px;line-height:1.6;">
+          La gestion du temps de travail et des présences, sécurisée par la biométrie et la géolocalisation.
+        </p>
+      </div>
+      <div>
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="#demo">Démonstration</a></li>
+          <li><a href="#securite">Sécurité</a></li>
+          <li><a href="#acces">Créer un compte</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:contact@presencerh.app">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PresenceRH. Tous droits réservés.</span>
+      <span>Fait avec rigueur pour la RH moderne.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
