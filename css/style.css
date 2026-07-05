@@ -58,13 +58,14 @@ header.nav{
   position:sticky; top:0; z-index:100; backdrop-filter:blur(14px);
   background:rgba(10,12,15,0.85); border-bottom:1px solid var(--border-soft);
 }
-.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--maxw); margin:0 auto;}
-.brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px;}
-.brand img{width:32px; height:32px; border-radius:8px;}
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 24px; max-width:var(--maxw); margin:0 auto;}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:17px; min-width:0; flex-shrink:1;}
+.brand img{width:32px; height:32px; border-radius:8px; flex-shrink:0;}
+.brand span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .nav-links{display:flex; align-items:center; gap:30px; font-size:14px; font-weight:600; color:var(--muted);}
 .nav-links a:hover{color:var(--text);}
-.nav-cta{display:flex; gap:10px; align-items:center;}
-.nav-toggle{display:none; background:none; border:1px solid var(--border); color:var(--text); border-radius:8px; padding:8px 10px; font-size:18px;}
+.nav-cta{display:flex; gap:10px; align-items:center; flex-shrink:0;}
+.nav-toggle{display:none; background:none; border:1px solid var(--border); color:var(--text); border-radius:8px; padding:8px 10px; font-size:18px; flex-shrink:0;}
 
 @media (max-width: 860px){
   .nav-links{position:fixed; top:64px; left:0; right:0; background:var(--panel); border-bottom:1px solid var(--border-soft);
@@ -72,6 +73,11 @@ header.nav{
   .nav-links.open{transform:translateY(0);}
   .nav-toggle{display:block;}
   .nav-cta .btn.ghost{display:none;}
+}
+
+@media (max-width: 400px){
+  .brand{font-size:15px;}
+  .nav-cta .btn.primary{padding:11px 14px; font-size:12.5px;}
 }
 
 /* ===== Hero ===== */
@@ -268,5 +274,3 @@ footer{border-top:1px solid var(--border-soft); padding:56px 0 28px;}
 }
 .form-group textarea:focus{border-color:var(--teal);}
 .hp-field{position:absolute; left:-9999px; top:-9999px;}
-.nav-cta .btn.sales{display:none;}
-@media (min-width:640px){ .nav-cta .btn.sales{display:inline-flex;} }
