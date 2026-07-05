@@ -52,16 +52,29 @@ setInterval(tickHeroClock, 1000);
 
 /* ==================== VIDEO DE DEMO ====================
    Si le fichier assets/demo-presencerh.mp4 est present, on l'affiche ;
-   sinon on garde le message d'attente visible (voir index.html). */
+   sinon on garde le message d'attente visible (voir index.html). Une fois
+   affichee, la video se lance automatiquement des qu'elle entre dans
+   l'ecran et se coupe des qu'on la quitte (muette, comme l'exige la
+   plupart des navigateurs pour autoriser la lecture automatique). */
 (function checkDemoVideo() {
   const video = document.getElementById('demoVideo');
   const placeholder = document.getElementById('videoPlaceholder');
   fetch('assets/demo-presencerh.mp4', { method: 'HEAD' })
     .then((res) => {
-      if (res.ok) {
-        video.style.display = 'block';
-        placeholder.style.display = 'none';
-      }
+      if (!res.ok) return;
+      video.style.display = 'block';
+      placeholder.style.display = 'none';
+
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => { /* lecture bloquee par le navigateur : l'utilisateur pourra demarrer manuellement */ });
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+      videoObserver.observe(video);
     })
     .catch(() => { /* fichier absent : on garde le placeholder */ });
 })();

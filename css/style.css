@@ -147,7 +147,7 @@ header.nav{
 
 /* ===== Video ===== */
 .video-wrap{
-  max-width:860px; margin:0 auto; border-radius:20px; overflow:hidden; border:1px solid var(--border-soft);
+  max-width:520px; margin:0 auto; border-radius:20px; overflow:hidden; border:1px solid var(--border-soft);
   background:var(--panel); box-shadow:0 30px 70px -30px rgba(0,0,0,0.6);
 }
 .video-frame{position:relative; aspect-ratio:16/9; background:linear-gradient(135deg,#161B21,#0D1013);}
