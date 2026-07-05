@@ -494,6 +494,33 @@
   </div>
 </div>
 
+<!-- ASSISTANT DE CHAT (questions sur PresenceRH uniquement) -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()" aria-label="Ouvrir l'assistant PresenceRH">
+  💬<span class="badge-dot" id="chatBadge"></span>
+</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div class="ci">🤖</div>
+    <div class="chat-head-txt">
+      <strong>Assistant PresenceRH</strong>
+      <span><span class="dot"></span> En ligne</span>
+    </div>
+    <button class="chat-close" onclick="toggleChat(false)" aria-label="Fermer">&times;</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-suggest" id="chatSuggest">
+    <button onclick="askSuggestion(this)">Comment fonctionne le pointage ?</button>
+    <button onclick="askSuggestion(this)">Est-ce securise ?</button>
+    <button onclick="askSuggestion(this)">Sur quelles plateformes ?</button>
+  </div>
+  <div class="chat-input-row">
+    <textarea id="chatInput" rows="1" placeholder="Posez une question sur PresenceRH..." onkeydown="handleChatKeydown(event)"></textarea>
+    <button class="chat-send" id="chatSendBtn" onclick="sendChatMessage()" aria-label="Envoyer">➤</button>
+  </div>
+  <div class="chat-foot">Assistant IA specialise dans PresenceRH uniquement.</div>
+</div>
+
 <script src="js/main.js"></script>
+<script src="js/chat-widget.js"></script>
 </body>
 </html>
